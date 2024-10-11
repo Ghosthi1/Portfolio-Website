@@ -171,14 +171,14 @@ input, select, textarea {
 		font-weight: 700;
 		line-height: 1.3;
 		margin: 0 0 1em 0;
-		letter-spacing: -0.035em;
+		letter-spacing: -0.025em;
 	}
 
 		h1 a {
 			color: inherit;
 		}
 
-		@media screen and (max-width: 736px) {
+		@media screen and (max-width: 768px) {
 
 			h1 {
 				font-size: 2em;
@@ -187,13 +187,25 @@ input, select, textarea {
 
 		}
 
-		@media screen and (max-width: 360px) {
+		@media screen and (max-width: 736px) {
 
 			h1 {
-				font-size: 1.75em;
+				font-size: 1.25em;
+				margin: 0 0 1em 0;
 			}
 
 		}
+
+		@media screen and (max-width: 360px) {
+
+			h1 {
+				font-size: 1.1em;
+				margin: 0 0 2em 0;
+			}
+
+		}
+
+
 
 	h2, h3, h4, h5, h6 {
 		font-weight: 900;
@@ -2838,11 +2850,28 @@ input, select, textarea {
 			color: inherit;
 			font-weight: 900;
 			letter-spacing: 0.35em;
-			margin: 0 0 2.5em 0;
+			margin: 0 0 1.5em 0;
 			text-decoration: none;
 			text-transform: uppercase;
 			display: inline-block;
 		}
+			@media screen and (max-width: 768px) {
+				#header .logo{
+					margin: 0 0 2em 0;
+				}
+			}
+
+			@media screen and (max-width: 736px) {
+				#header .logo{
+					margin: 0 0 3em 0;
+				}
+			}
+		
+			@media screen and (max-width: 360px) {
+				#header .logo{
+					margin: 0 0 3em 0;
+				}
+			}
 
 			#header .logo > * {
 				display: inline-block;
@@ -2850,14 +2879,20 @@ input, select, textarea {
 			}
 
 			#header .logo .symbol {
-				margin-right: 0.65em;
+				margin-right: 0.1em;
 			}
 
 				#header .logo .symbol img {
 					display: block;
-					width: 2em;
-					height: 2em;
+					max-width:2em;
+					max-height: 2em;
+
 				}
+			#header .logo .title{
+				max-width: 1em;
+				max-height: 1em;
+			}
+
 
 		#header nav {
 			position: fixed;
@@ -3010,6 +3045,47 @@ input, select, textarea {
 			opacity: 0;
 			overflow-y: auto;
 		}
+
+			.leftList {
+				float: left; 
+				width: 30%; 
+				margin-left: 10%;
+			}
+
+			.rightList{
+				float: left; 
+				width: 30%; 
+				margin-left: 10%;
+				margin-bottom: 1em;
+			}
+
+			.GitImage{
+				display: inline-block;
+			}
+
+
+			@media screen and (max-width: 768px) {
+				.leftList{
+					width: 40%;
+				}
+			}
+
+			@media screen and (max-width: 720px) {
+				.leftList{
+					width: 100%;
+				}
+				.rightList{
+					width: 100%;
+				}
+			}
+
+			.Iframe{
+				border:none; 
+				aspect-ratio: 16/9;
+				width: 100%;
+			}
+
+
 
 			#menu > .inner > ul {
 				list-style: none;
