@@ -3079,7 +3079,13 @@ input, select, textarea {
 				}
 			}
 
-			.Iframe{
+			.IframeTableTopTracker{
+				border:none; 
+				aspect-ratio: 16/9;
+				width: 100%;
+			}
+
+			.IframeHoops{
 				border:none; 
 				aspect-ratio: 16/9;
 				width: 100%;
