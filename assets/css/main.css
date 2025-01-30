@@ -3079,12 +3079,6 @@ input, select, textarea {
 				}
 			}
 
-			.IframeTableTopTracker{
-				border:none; 
-				aspect-ratio: 16/9;
-				width: 100%;
-			}
-
 			.Iframe{
 				border:none; 
 				aspect-ratio: 16/9;
