@@ -75,18 +75,19 @@
 
 							<!--Reflections-->
 							<h1>Reflections</h1>
-							<p>Reflections where formed after reading <a href="https://unity.com/resources/c-sharp-style-guide-unity-6">C# Styling guid</a></p>
+							<p>Reflections where formed after reading <a href="https://unity.com/resources/c-sharp-style-guide-unity-6">C# Styling guide</a></p>
 							<li><b>Use of serilized variables to tidy up the inspecter.</b> Could use to limit amount of varables showing up im the inspector.</li>
 							<li><b>Use of more Scripts to simplify each scripts.</b> By the end of the project i had made multiple scripts that had methods not related to the script name. </li>
 							<li><b>Always break down code into methods where possible.</b> Began having long sections of code that could have been put in a method to allow the main line of code easier to follow.</li>
-							<li><b></b></li>
-
+							<li><b>Could have used BEM naming convention.</b> Could have better named ui elements to allow easier editing.</li>
+							<li><b>Could have avoided making a God Object.</b> One of my scripts ended up being the parent of the others in an attempted to share the gameState variable, which bloated up the inspector.
+							The solution I had was to use Static on the gameState, so in the end I could have used a dedicated GameManager Script.</li>
 
 						</div>
 					</div>
 
 				<!-- Footer -->
-					<footer id="footer">
+					<footer id="footer"
 						<div class="inner">
 							<ul class="copyright">
 								<li>&copy; Untitled. All rights reserved</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
