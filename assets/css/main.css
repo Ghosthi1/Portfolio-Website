@@ -163,7 +163,7 @@ input, select, textarea {
 	}
 
 	p {
-		margin: 0 0 2em 0;
+		margin: 0 0 0.8em 0;
 	}
 
 	h1 {
@@ -210,7 +210,7 @@ input, select, textarea {
 	h2, h3, h4, h5, h6 {
 		font-weight: 900;
 		line-height: 1.5;
-		margin: 0 0 2em 0;
+		margin: 0 0 1em 0;
 		text-transform: uppercase;
 		letter-spacing: 0.35em;
 	}
@@ -1914,13 +1914,13 @@ input, select, textarea {
 				}
 
 	dl {
-		margin: 0 0 2em 0;
+		margin: 0 0 1em 0;
 	}
 
 		dl dt {
 			display: block;
 			font-weight: 900;
-			margin: 0 0 1em 0;
+			margin: 0 0 0.2em 0;
 		}
 
 		dl dd {
@@ -2841,7 +2841,7 @@ input, select, textarea {
 /* Header */
 
 	#header {
-		padding: 8em 0 0.1em 0 ;
+		padding: 3em 0 0.1em 0 ;
 	}
 
 		#header .logo {
