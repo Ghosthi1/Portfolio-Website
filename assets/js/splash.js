@@ -52,14 +52,14 @@ document.addEventListener("DOMContentLoaded", function() {
             const splashItem = document.createElement("div");
             splashItem.style.display = "block";
             splashItem.style.position = "relative";
-            splashItem.style.minWidth = "60em";
-            splashItem.style.maxWidth = "800px";
+            splashItem.style.minWidth = "45%";
+            splashItem.style.maxWidth = "45%";
             splashItem.style.height = "100%";
             splashItem.style.marginLeft = idx === 0 ? "0" : "-60px";
             splashItem.style.background = `url('${item.img}') center center / cover no-repeat`;
-            splashItem.style.borderRadius = "8px";
+            splashItem.style.borderRadius = "2%";
             splashItem.style.boxShadow = "0 2px 8px rgba(0,0,0,0.08)";
-            splashItem.style.transition = "transform 0.2s, z-index 0.2s, opacity 0.2s";
+            splashItem.style.transition = "transform 0.7s, z-index 0.5s, opacity 1s";
             splashItem.style.zIndex = 1;
             splashItem.style.opacity = "0.5";
             return splashItem;
@@ -155,7 +155,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 scrollContainer.scrollLeft += itemsWidth;
             }
             updateCenterOpacity();
-        }, 10);
+        }, 0);
     }
 
     function stopAutoScroll() {
