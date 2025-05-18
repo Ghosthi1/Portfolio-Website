@@ -3106,7 +3106,7 @@ input, select, textarea {
 
 					#menu > .inner > ul > li a {
 						display: block;
-						padding: 1em 0;
+						padding: 0.5em 0;
 						line-height: 1.5;
 						border: 0;
 						color: inherit;
