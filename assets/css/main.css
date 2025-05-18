@@ -2609,7 +2609,11 @@ input, select, textarea {
 				height: 100%;
 				border-radius: 4px;
 				overflow: hidden;
-			}
+				-webkit-border-radius: 4px;
+				-moz-border-radius: 4px;
+				-ms-border-radius: 4px;
+				-o-border-radius: 4px;
+}
 
 				.tiles article > .image img {
 					display: block;
