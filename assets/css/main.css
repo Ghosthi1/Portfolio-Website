@@ -2848,7 +2848,10 @@ input, select, textarea {
 
 	#header {
 		padding: 3em 0 0.1em 0 ;
-		
+	}
+
+	#header > .inner {
+		margin-left: 0 !important;
 	}
 
 		#header .logo {
@@ -3056,7 +3059,6 @@ input, select, textarea {
 			.leftList {
 				float: left; 
 				width: 30%; 
-				margin-left: 10%;
 			}
 
 			.rightList{
@@ -3415,15 +3417,13 @@ input, select, textarea {
     display: none;
 }
 #splash-bg {
-    position: fixed;
-    top: 80px; /* Adjust if your header is taller/shorter */
-    left: 0;
-    width: 100vw;
-    height: 1000px; /* Or your preferred height */
-    z-index: 0;
-}
-#main, #header, #footer {
     position: relative;
-    z-index: 1;
+    width: 100vw;
+    height: 80vh;
+}
+
+#social {
+	display: flex;
+	justify-content: left;
 }
 

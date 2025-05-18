@@ -52,8 +52,8 @@ document.addEventListener("DOMContentLoaded", function() {
             const splashItem = document.createElement("div");
             splashItem.style.display = "block";
             splashItem.style.position = "relative";
-            splashItem.style.minWidth = "700px"; // Increased from 500px to 700px
-            splashItem.style.maxWidth = "700px"; // Increased from 500px to 700px
+            splashItem.style.minWidth = "60em";
+            splashItem.style.maxWidth = "800px";
             splashItem.style.height = "100%";
             splashItem.style.marginLeft = idx === 0 ? "0" : "-60px";
             splashItem.style.background = `url('${item.img}') center center / cover no-repeat`;
@@ -75,6 +75,17 @@ document.addEventListener("DOMContentLoaded", function() {
     cloneItems.forEach(item => scrollContainer.appendChild(item));
 
     splashBg.appendChild(scrollContainer);
+
+    // --- Pick a random image to start with ---
+    // Each item is 700px wide, minus 60px overlap for each after the first
+    const itemWidth = 700 - 60; // effective width per item after overlap
+    const randomIndex = Math.floor(Math.random() * splashData.length);
+    // Scroll so the random image is centered
+    setTimeout(() => {
+        scrollContainer.scrollLeft = randomIndex * itemWidth;
+        updateCenterOpacity();
+    }, 0);
+
     // Hide scrollbar for Webkit browsers (Chrome, Safari, Opera)
     scrollContainer.style.overflow = "auto";
     scrollContainer.style.setProperty("overflow-x", "auto");
@@ -144,7 +155,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 scrollContainer.scrollLeft += itemsWidth;
             }
             updateCenterOpacity();
-        }, 20);
+        }, 10);
     }
 
     function stopAutoScroll() {
