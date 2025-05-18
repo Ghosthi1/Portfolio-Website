@@ -19,11 +19,18 @@ document.addEventListener("DOMContentLoaded", function() {
             img: "images/Games/TickTackToe/TickTackToe.jpg",
             link: "Html/Games/TickTackToe.html",
             caption: "TickTackToe"
+        },
+        {
+            img: "images/Misc/ColourSplash/pic01.jpg"
+        },
+                {
+            img: "images/Misc/ColourSplash/pic02.jpg"
         }
     ];
 
-    const splashPage = document.getElementById("splash-page");
-    if (!splashPage) return;
+    // Use splash-bg as the container instead of splash-page
+    const splashBg = document.getElementById("splash-bg");
+    if (!splashBg) return;
 
     // Create horizontal scroll container
     const scrollContainer = document.createElement("div");
@@ -34,36 +41,19 @@ document.addEventListener("DOMContentLoaded", function() {
     scrollContainer.style.gap = "0";
     scrollContainer.style.padding = "1em 0";
     scrollContainer.style.scrollBehavior = "auto"; // Prevent smooth scroll for instant jump
-
-    // Create a caption element for the focused item's name
-    const splashCaption = document.createElement("div");
-    splashCaption.style.position = "absolute";
-    splashCaption.style.left = "50%";
-    splashCaption.style.bottom = "20px";
-    splashCaption.style.transform = "translateX(-50%)";
-    splashCaption.style.background = "rgba(0,0,0,0.7)";
-    splashCaption.style.color = "#fff";
-    splashCaption.style.padding = "0.5em 1.5em";
-    splashCaption.style.borderRadius = "20px";
-    splashCaption.style.fontSize = "1.5em";
-    splashCaption.style.fontWeight = "bold";
-    splashCaption.style.pointerEvents = "none";
-    splashCaption.style.zIndex = "100";
-    splashCaption.style.transition = "opacity 0.2s";
-    splashCaption.style.opacity = "0";
-    splashCaption.style.whiteSpace = "nowrap";
-    splashCaption.id = "splash-caption";
-    splashPage.appendChild(splashCaption);
+    // Hide scrollbar (cross-browser)
+    scrollContainer.style.msOverflowStyle = "none"; // IE and Edge
+    scrollContainer.style.scrollbarWidth = "none"; // Firefox
 
     // Helper to create splash items
     function createSplashItems(data) {
         return data.map((item, idx) => {
-            const splashItem = document.createElement("a");
-            splashItem.href = item.link;
+            // Use a div instead of an anchor to remove links
+            const splashItem = document.createElement("div");
             splashItem.style.display = "block";
             splashItem.style.position = "relative";
-            splashItem.style.minWidth = "500px";
-            splashItem.style.maxWidth = "500px";
+            splashItem.style.minWidth = "700px"; // Increased from 500px to 700px
+            splashItem.style.maxWidth = "700px"; // Increased from 500px to 700px
             splashItem.style.height = "100%";
             splashItem.style.marginLeft = idx === 0 ? "0" : "-60px";
             splashItem.style.background = `url('${item.img}') center center / cover no-repeat`;
@@ -84,7 +74,14 @@ document.addEventListener("DOMContentLoaded", function() {
     const cloneItems = createSplashItems(splashData);
     cloneItems.forEach(item => scrollContainer.appendChild(item));
 
-    splashPage.appendChild(scrollContainer);
+    splashBg.appendChild(scrollContainer);
+    // Hide scrollbar for Webkit browsers (Chrome, Safari, Opera)
+    scrollContainer.style.overflow = "auto";
+    scrollContainer.style.setProperty("overflow-x", "auto");
+    scrollContainer.style.setProperty("overflow-y", "hidden");
+    scrollContainer.style.setProperty("scrollbar-width", "none");
+    scrollContainer.style.setProperty("-ms-overflow-style", "none");
+    scrollContainer.classList.add("hide-scrollbar");
 
     // Helper to update opacity based on center
     function updateCenterOpacity() {
@@ -117,13 +114,6 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         });
 
-        // Show caption for the focused item
-        if (closest && closestIdx >= 0) {
-            splashCaption.textContent = splashData[closestIdx].caption;
-            splashCaption.style.opacity = "1";
-        } else {
-            splashCaption.style.opacity = "0";
-        }
     }
 
     // Calculate the width of one full set of items (for looping)
@@ -167,10 +157,6 @@ document.addEventListener("DOMContentLoaded", function() {
         itemsWidth = getItemsWidth();
         updateCenterOpacity();
     });
-
-    // Pause auto-scroll on mouse over, resume on mouse out
-    scrollContainer.addEventListener("mouseenter", stopAutoScroll);
-    scrollContainer.addEventListener("mouseleave", startAutoScroll);
 
     startAutoScroll();
     updateCenterOpacity();

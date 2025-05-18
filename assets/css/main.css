@@ -2848,6 +2848,7 @@ input, select, textarea {
 
 	#header {
 		padding: 3em 0 0.1em 0 ;
+		
 	}
 
 		#header .logo {
@@ -3410,5 +3411,19 @@ input, select, textarea {
 
 		}
 
-
+.hide-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+#splash-bg {
+    position: fixed;
+    top: 80px; /* Adjust if your header is taller/shorter */
+    left: 0;
+    width: 100vw;
+    height: 1000px; /* Or your preferred height */
+    z-index: 0;
+}
+#main, #header, #footer {
+    position: relative;
+    z-index: 1;
+}
 
