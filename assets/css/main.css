@@ -1,12 +1,6 @@
 @import url(fontawesome-all.min.css);
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,700,900");
 
-/*
-	Phantom by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
-*/
-
 html, body, div, span, applet, object,
 iframe, h1, h2, h3, h4, h5, h6, p, blockquote,
 pre, a, abbr, acronym, address, big, cite,
@@ -3449,3 +3443,26 @@ input, select, textarea {
     line-height: 1.3;
 }
 
+@media screen and (max-width: 736px) {
+    .header-row {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    #social {
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        min-width: 0;
+        margin-right: 0;
+        margin-bottom: 1em;
+    }
+    .leftList, .rightList {
+        width: 48%;
+        margin: 0;
+        float: none;
+    }
+    #summary {
+        margin-top: 0;
+        width: 100%;
+    }
+}

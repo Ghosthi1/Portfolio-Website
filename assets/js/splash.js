@@ -40,10 +40,9 @@ document.addEventListener("DOMContentLoaded", function() {
     scrollContainer.style.alignItems = "center";
     scrollContainer.style.gap = "0";
     scrollContainer.style.padding = "1em 0";
-    scrollContainer.style.scrollBehavior = "auto"; // Prevent smooth scroll for instant jump
-    // Hide scrollbar (cross-browser)
-    scrollContainer.style.msOverflowStyle = "none"; // IE and Edge
-    scrollContainer.style.scrollbarWidth = "none"; // Firefox
+    scrollContainer.style.scrollBehavior = "auto";
+    scrollContainer.style.msOverflowStyle = "none";
+    scrollContainer.style.scrollbarWidth = "none";
 
     // Helper to create splash items
     function createSplashItems(data) {
@@ -62,7 +61,25 @@ document.addEventListener("DOMContentLoaded", function() {
             splashItem.style.transition = "transform 0.7s, z-index 0.5s, opacity 1s";
             splashItem.style.zIndex = 1;
             splashItem.style.opacity = "0.5";
-            return splashItem;
+
+        // Responsive: If screen is small, make splash fill the screen
+        function updateSplashItemSize() {
+            if (window.innerWidth <= 600) {
+                splashItem.style.minWidth = "100vw";
+                splashItem.style.maxWidth = "100vw";
+                splashItem.style.height = "40vh";
+                splashItem.style.marginLeft = idx === 0 ? "0" : "-10vw";
+            } else {
+                splashItem.style.minWidth = "50%";
+                splashItem.style.maxWidth = "50%";
+                splashItem.style.height = "60vh";
+                splashItem.style.marginLeft = idx === 0 ? "0" : "-4vw";
+            }
+        }
+        updateSplashItemSize();
+        window.addEventListener("resize", updateSplashItemSize);
+
+        return splashItem;
         });
     }
 
@@ -100,7 +117,6 @@ document.addEventListener("DOMContentLoaded", function() {
         const containerCenter = containerRect.left + containerRect.width / 2;
         let closest = null;
         let closestDist = Infinity;
-        let closestIdx = -1;
 
         Array.from(scrollContainer.children).forEach((child, idx) => {
             const rect = child.getBoundingClientRect();
@@ -157,17 +173,6 @@ document.addEventListener("DOMContentLoaded", function() {
             updateCenterOpacity();
         }, 0);
     }
-
-    function stopAutoScroll() {
-        clearInterval(autoScroll);
-    }
-
-    // Update on scroll and resize
-    scrollContainer.addEventListener("scroll", updateCenterOpacity);
-    window.addEventListener("resize", () => {
-        itemsWidth = getItemsWidth();
-        updateCenterOpacity();
-    });
 
     startAutoScroll();
     updateCenterOpacity();
