@@ -2832,7 +2832,6 @@ input, select, textarea {
 
 		#header .logo {
 			display: block;
-			border-bottom: 0;
 			color: inherit;
 			font-weight: 900;
 			letter-spacing: 0.35em;
@@ -2864,6 +2863,12 @@ input, select, textarea {
 				vertical-align: middle;
 			}
 
+			.logo .symbol img {
+				width: 2em;
+				height: 2em;
+				object-fit: cover;
+			}
+
 			#header .logo .symbol {
 				margin-right: 0.1em;
 			}
@@ -2872,7 +2877,6 @@ input, select, textarea {
 					display: block;
 					max-width:2em;
 					max-height: 2em;
-
 				}
 			#header .logo .title{
 				max-width: 1em;
@@ -3563,8 +3567,22 @@ input, select, textarea {
     justify-content: space-between;
     flex-wrap: wrap;
     margin-top: 100%;
-    margin-bottom: 1em;
-    flex-shrink: 0;
     /* Stick to bottom of menu */
     align-self: flex-end;
+}
+
+.responsive-iframe {
+  position: relative;
+  width: 100%;
+  max-width: 100%; /* Optional: limit max width */
+  aspect-ratio: 16 / 9;
+  margin: 0 auto;
+}
+
+.responsive-iframe iframe {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
 }
