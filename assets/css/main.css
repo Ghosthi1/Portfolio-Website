@@ -3558,3 +3558,13 @@ input, select, textarea {
     position: relative;
 }
 
+.menuLinks {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 100%;
+    margin-bottom: 1em;
+    flex-shrink: 0;
+    /* Stick to bottom of menu */
+    align-self: flex-end;
+}
