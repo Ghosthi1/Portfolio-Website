@@ -3468,10 +3468,6 @@ input, select, textarea {
 }
 
 .splash-box {
-    background: none;
-    padding: 0;
-    min-width: 0;
-    box-shadow: none;
     border-radius: 12px;
     transition: transform 0.3s cubic-bezier(.4,2,.6,1), box-shadow 0.3s;
 }
@@ -3498,9 +3494,10 @@ input, select, textarea {
     position: relative;
     width: 100%;
     max-width: 350px;
-    aspect-ratio: 350 / 220;
     margin: 0 auto;
 }
+
+
 .bg-img {
     width: 100%;
     height: auto;
@@ -3542,5 +3539,22 @@ input, select, textarea {
     border-radius: 8px;
     display: block;
 	opacity: 0.9;
+}
+
+/* Center the splash title over the image */
+.splash-center-title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 2em;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+    pointer-events: none;
+    z-index: 2;
+}
+
+.image-box-wrapper {
+    position: relative;
 }
 

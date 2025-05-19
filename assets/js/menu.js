@@ -4,8 +4,8 @@ document.addEventListener("DOMContentLoaded", function() {
             <h2>Menu</h2>
             <ul>
                 <li><a href="Homepage.html">Home</a></li>
-                <li><a href="Apps.html">Apps</a></li>
-                <li><a href="Games.html">Games</a></li>
+                <li><a href="Html/Apps/AppsHome.html">Apps</a></li>
+                <li><a href="Html/Games/GamesHome.html">Games</a></li>
             </ul>
         </div>
     `;
