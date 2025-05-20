@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function() {
         <div class="inner">
             <h2>Menu</h2>
             <ul>
-                <li><a href="../../Index.html">Home</a></li>
+                <li><a href="../../index.html">Home</a></li>
                 <li><a href="../../AppsHome.html">Apps</a></li>
                 <li><a href="../../GamesHome.html">Games</a></li>
             </ul>
