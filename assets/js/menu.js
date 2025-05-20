@@ -3,9 +3,9 @@ document.addEventListener("DOMContentLoaded", function() {
         <div class="inner">
             <h2>Menu</h2>
             <ul>
-                <li><a href="../../index.html">Home</a></li>
-                <li><a href="../../AppsHome.html">Apps</a></li>
-                <li><a href="../../GamesHome.html">Games</a></li>
+                <li><a href="../../Portfolio-Website/index.html">Home</a></li>
+                <li><a href="../../Portfolio-Website/AppsHome.html">Apps</a></li>
+                <li><a href="../../Portfolio-Website/GamesHome.html">Games</a></li>
             </ul>
             <div class="menuLinks" style="margin-top: 60vh;">
                 <h2>
