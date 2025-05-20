@@ -3486,7 +3486,7 @@
   position: relative;
   width: 100%;
   max-width: 100%; /* Optional: limit max width */
-  aspect-ratio: 16 / 9;
+  height: 720px;
   margin: 0 auto;
 }
 
