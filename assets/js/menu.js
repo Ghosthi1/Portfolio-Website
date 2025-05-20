@@ -13,15 +13,15 @@ document.addEventListener("DOMContentLoaded", function() {
                     <a href="mailto:c-forsyth02@sky.com">Email</a>
                 </h2>
                 <h2>
-                    <img src="../../images/LinkedIn/LI-In-Bug.png" width="35" height="30" alt="" />
+                    <img src="images/LinkedIn/LI-In-Bug.png" width="35" height="30" alt="" />
                     <a href="https://www.linkedin.com/feed/">LinkedIn</a>
                 </h2>
                 <h2>
-                    <img src="../../images/GitHub/github-mark.png" width="30" height="30" alt="" />
+                    <img src="images/GitHub/github-mark.png" width="30" height="30" alt="" />
                     <a href="https://github.com/Ghosthi1">GitHub</a>
                 </h2>
                 <h2>
-                    <img src="../../images/ItchIo/Itch.svg" width="35" height="30" alt="" />
+                    <img src="images/ItchIo/Itch.svg" width="35" height="30" alt="" />
                     <a href="https://ghosthi.itch.io">itch.io</a>
                 </h2>
             </div>
