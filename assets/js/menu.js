@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function() {
             </ul>
             <div class="menuLinks" style="margin-top: 60vh;">
                 <h2>
-                    <img src="../../images/Misc/Mail.png" width="35" height="35" alt="" />
+                    <img src="images/Misc/Mail.png" width="35" height="35" alt="" />
                     <a href="mailto:c-forsyth02@sky.com">Email</a>
                 </h2>
                 <h2>
