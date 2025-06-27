@@ -2,21 +2,21 @@ document.addEventListener("DOMContentLoaded", function() {
     const splashData = [
         {
             img: "images/Apps/TableTopTracker/TableTopTracker.jpg",
-            link: "Html/Apps/TableTopTracker.html",
             caption: "TableTopTracker"
+        },
+        {
+            img: "images/Apps/calculator/icon.png",
+            caption: "Calculator",
         },
         {
             img: "images/Misc/ColourSplash/pic01.jpg"
         },
-        {
+                {
             img: "images/Misc/ColourSplash/pic02.jpg"
-        },
-        {
-            img: "images/Misc/ColourSplash/pic09.jpg"
         }
     ];
 
-    // Use splash-bg as the container instead of splash-page
+  // Use splash-bg as the container instead of splash-page
     const splashBg = document.getElementById("splash-bg");
     if (!splashBg) return;
 
@@ -50,32 +50,24 @@ document.addEventListener("DOMContentLoaded", function() {
             splashItem.style.zIndex = 1;
             splashItem.style.opacity = "0.5";
 
-            // Make splash item clickable if it has a link
-            if (item.link) {
-                splashItem.style.cursor = "pointer";
-                splashItem.addEventListener("click", () => {
-                    window.location.href = item.link;
-                });
+        // Responsive: If screen is small, make splash fill the screen
+        function updateSplashItemSize() {
+            if (window.innerWidth <= 600) {
+                splashItem.style.minWidth = "100vw";
+                splashItem.style.maxWidth = "100vw";
+                splashItem.style.height = "40vh";
+                splashItem.style.marginLeft = idx === 0 ? "0" : "-10vw";
+            } else {
+                splashItem.style.minWidth = "50%";
+                splashItem.style.maxWidth = "50%";
+                splashItem.style.height = "60vh";
+                splashItem.style.marginLeft = idx === 0 ? "0" : "-4vw";
             }
+        }
+        updateSplashItemSize();
+        window.addEventListener("resize", updateSplashItemSize);
 
-            // Responsive: If screen is small, make splash fill the screen
-            function updateSplashItemSize() {
-                if (window.innerWidth <= 600) {
-                    splashItem.style.minWidth = "100vw";
-                    splashItem.style.maxWidth = "100vw";
-                    splashItem.style.height = "40vh";
-                    splashItem.style.marginLeft = idx === 0 ? "0" : "-10vw";
-                } else {
-                    splashItem.style.minWidth = "50%";
-                    splashItem.style.maxWidth = "50%";
-                    splashItem.style.height = "60vh";
-                    splashItem.style.marginLeft = idx === 0 ? "0" : "-4vw";
-                }
-            }
-            updateSplashItemSize();
-            window.addEventListener("resize", updateSplashItemSize);
-
-            return splashItem;
+        return splashItem;
         });
     }
 
@@ -88,15 +80,6 @@ document.addEventListener("DOMContentLoaded", function() {
     cloneItems.forEach(item => scrollContainer.appendChild(item));
 
     splashBg.appendChild(scrollContainer);
-
-    // Enable horizontal scrolling with mouse wheel
-    scrollContainer.addEventListener("wheel", function(e) {
-        if (e.deltaY !== 0) {
-            e.preventDefault();
-            scrollContainer.scrollLeft += e.deltaY;
-            updateCenterOpacity();
-        }
-    }, { passive: false });
 
     // --- Pick a random image to start with ---
     // Each item is 700px wide, minus 60px overlap for each after the first
@@ -181,12 +164,4 @@ document.addEventListener("DOMContentLoaded", function() {
 
     startAutoScroll();
     updateCenterOpacity();
-
-    // Pause auto-scroll on hover
-    scrollContainer.addEventListener("mouseenter", () => {
-        clearInterval(autoScroll);
-    });
-    scrollContainer.addEventListener("mouseleave", () => {
-        startAutoScroll();
-    });
 });
